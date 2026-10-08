@@ -1,5 +1,6 @@
 import { whatsappLink } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "./icons";
+import Link from "next/link";
 
 export default function FloatingWhatsApp() {
   return (
@@ -7,7 +8,7 @@ export default function FloatingWhatsApp() {
       className="fixed bottom-5 right-5 z-50 sm:bottom-6 sm:right-6"
       style={{ marginBottom: "env(safe-area-inset-bottom)" }}
     >
-      <a
+      <Link
         href={whatsappLink()}
         target="_blank"
         rel="noopener noreferrer"
@@ -25,7 +26,7 @@ export default function FloatingWhatsApp() {
         >
           Chat with us
         </span>
-      </a>
+      </Link>
     </div>
   );
 }

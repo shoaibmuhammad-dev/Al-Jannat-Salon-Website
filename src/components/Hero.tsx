@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { Clock, Crown, Star } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { heroImage } from "@/data/content";
 import { btnPrimary, btnSecondary, container } from "@/lib/ui";
 import { whatsappLink } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "./icons";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -39,7 +39,7 @@ export default function Hero() {
             className="mt-8 flex flex-col gap-3 sm:flex-row animate-rise motion-reduce:animate-none"
             style={{ animationDelay: "220ms" }}
           >
-            <a
+            <Link
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
@@ -47,10 +47,10 @@ export default function Hero() {
             >
               <WhatsAppIcon className="h-5 w-5" />
               Book on WhatsApp
-            </a>
-            <a href="#services" className={btnSecondary}>
+            </Link>
+            <Link href="#services" className={btnSecondary}>
               View services
-            </a>
+            </Link>
           </div>
 
           <ul

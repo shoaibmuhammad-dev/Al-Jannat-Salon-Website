@@ -45,8 +45,9 @@ export const siteConfig = {
 
   // Replace "/" with the real profile URLs when you have them.
   social: {
-    instagram: "/",
-    facebook: "/",
+    instagram: "https://www.instagram.com/al_jannat_salon/",
+    facebook:
+      "https://www.facebook.com/p/Al-Jannat-Salon-and-Studio-100083311443791/",
   },
 
   // TODO: replace with a real, honest number before launch.
