@@ -3,14 +3,15 @@ import { btnGold, container } from "@/lib/ui";
 import { serviceMessage, whatsappLink } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "./icons";
 import SectionHeading from "./SectionHeading";
+import Link from "next/link";
 
 function BookLink({ title, dark }: { title: string; dark?: boolean }) {
   const className = dark
     ? btnGold
     : "inline-flex min-h-11 items-center gap-2 font-medium text-plum-900 underline decoration-gold-500 decoration-2 underline-offset-[6px] transition-colors hover:decoration-plum-800";
   return (
-    <a
-      href={whatsappLink(serviceMessage(title))}
+    <Link
+      href={whatsappLink(serviceMessage(`${title} Service`))}
       target="_blank"
       rel="noopener noreferrer"
       className={className}
@@ -19,7 +20,7 @@ function BookLink({ title, dark }: { title: string; dark?: boolean }) {
       <span>
         Book this service<span className="sr-only"> for {title}</span>
       </span>
-    </a>
+    </Link>
   );
 }
 
