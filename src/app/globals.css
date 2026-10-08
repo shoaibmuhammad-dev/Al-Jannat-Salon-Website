@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream font-sans text-plum-800 antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif text-plum-900;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.plum.600");
+    outline-offset: 3px;
+  }
+
+  /* Dark (plum) sections need a lighter focus ring */
+  .dark-surface :focus-visible {
+    outline-color: theme("colors.gold.300");
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/*
+ * Scroll reveal: pure CSS (scroll-driven animations), no JavaScript.
+ * Browsers without support, and people who prefer reduced motion, simply see the content.
+ */
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 45%;
+    }
+  }
+}
