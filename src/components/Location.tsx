@@ -78,6 +78,16 @@ export default function Location() {
           </div>
         </div>
 
+        {/* <div className="reveal aspect-[4/3] overflow-hidden rounded-3xl bg-blush-200 shadow-soft">
+          <iframe
+            title="Map showing Al-Jannat Salon & Studio in Gulistan-e-Johar, Karachi"
+            src={siteConfig.mapsEmbedUrl}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+            className="h-full w-full border-0"
+          />
+        </div> */}
         <div className="reveal">
           <MapEmbed
             src={siteConfig.mapsEmbedUrl}
