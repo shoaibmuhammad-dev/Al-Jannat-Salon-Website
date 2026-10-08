@@ -14,10 +14,7 @@ export const siteConfig = {
     "Al-Jannat Salon & Studio is a beauty salon in Johar, Karachi. Book bridal makeup, party looks, hair, eyelash extensions, brows and laser hair removal on WhatsApp.",
 
   // Your live domain (no trailing slash). Set NEXT_PUBLIC_SITE_URL in Vercel.
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example.com").replace(
-    /\/$/,
-    "",
-  ),
+  url: "https://al-jannat-salon.vercel.app",
 
   // WhatsApp number in international format, digits only (no +, spaces or dashes).
   // 03363691555 in Pakistan becomes 923363691555.
@@ -53,7 +50,7 @@ export const siteConfig = {
   },
 
   // TODO: replace with a real, honest number before launch.
-  trustedClients: "1,000+",
+  trustedClients: "50+",
 
   // Change `mapsQuery` to the salon's exact Google Maps listing name or address if needed.
   mapsEmbedUrl: `https://www.google.com/maps?q=${encodeURIComponent(mapsQuery)}&output=embed`,

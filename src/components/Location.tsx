@@ -2,6 +2,8 @@ import { Clock, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { btnPrimary, btnSecondary, container } from "@/lib/ui";
 import SectionHeading from "./SectionHeading";
+import Link from "next/link";
+import MapEmbed from "./MapEmbed";
 
 export default function Location() {
   return (
@@ -10,7 +12,9 @@ export default function Location() {
       aria-labelledby="visit-title"
       className="bg-blush-100 py-20 sm:py-28"
     >
-      <div className={`${container} grid gap-12 lg:grid-cols-2 lg:items-center`}>
+      <div
+        className={`${container} grid gap-12 lg:grid-cols-2 lg:items-center`}
+      >
         <div>
           <SectionHeading
             id="visit-title"
@@ -47,22 +51,22 @@ export default function Location() {
                 <span className="sr-only">Phone</span>
               </dt>
               <dd>
-                <a
+                <Link
                   href={`tel:${siteConfig.phoneTel}`}
                   className="text-plum-900 underline decoration-gold-500 decoration-2 underline-offset-4"
                 >
                   {siteConfig.phoneDisplay}
-                </a>
+                </Link>
               </dd>
             </div>
           </dl>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <a href={`tel:${siteConfig.phoneTel}`} className={btnPrimary}>
+            <Link href={`tel:${siteConfig.phoneTel}`} className={btnPrimary}>
               <Phone className="h-5 w-5" aria-hidden="true" />
               Call now
-            </a>
-            <a
+            </Link>
+            <Link
               href={siteConfig.mapsDirectionsUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -70,18 +74,15 @@ export default function Location() {
             >
               <MapPin className="h-5 w-5" aria-hidden="true" />
               Get directions
-            </a>
+            </Link>
           </div>
         </div>
 
-        <div className="reveal aspect-[4/3] overflow-hidden rounded-3xl bg-blush-200 shadow-soft">
-          <iframe
-            title="Map showing Al-Jannat Salon & Studio in Gulistan-e-Johar, Karachi"
+        <div className="reveal">
+          <MapEmbed
             src={siteConfig.mapsEmbedUrl}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-            className="h-full w-full border-0"
+            title="Map showing Al-Jannat Salon & Studio in Gulistan-e-Johar, Karachi"
+            directionsUrl={siteConfig.mapsDirectionsUrl}
           />
         </div>
       </div>

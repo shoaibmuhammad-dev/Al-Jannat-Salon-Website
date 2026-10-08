@@ -62,7 +62,7 @@ export default function Hero() {
                 {[0, 1, 2, 3, 4].map((i) => (
                   <Star
                     key={i}
-                    className="h-4 w-4 fill-gold-500 text-gold-500"
+                    className="h-4 w-4 fill-gold-500 text-gold-500 relative lg:-top-0.5"
                   />
                 ))}
               </span>
